@@ -46,7 +46,12 @@ class VerpackungTest(unittest.TestCase):
             self.assertEqual(felder[-8].attrib["fill"], g.BRAUN)
             koordinaten = list(brett.iter(f"{SVG}text"))
             self.assertEqual(Counter(label.text for label in koordinaten),
-                             dict.fromkeys("abcdefgh12345678", 2))
+                             dict.fromkeys("abcdefgh12345678", 1))
+            for label in koordinaten:
+                if label.text.isalpha():
+                    self.assertGreater(float(label.attrib["y"]), 249)
+                else:
+                    self.assertLess(float(label.attrib["x"]), 9)
             spalten = {label.text: float(label.attrib["x"]) for label in koordinaten if label.text.isalpha()}
             reihen = {label.text: float(label.attrib["y"]) for label in koordinaten if label.text.isdigit()}
             self.assertEqual([spalten[zeichen] for zeichen in "abcdefgh"], list(range(24, 235, 30)))

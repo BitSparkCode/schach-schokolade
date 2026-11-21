@@ -11,7 +11,7 @@ Prototyp für 32 massive Figuren, je 16 aus dunkler und weisser Schokolade. Nutz
 | Unterteil | 250 × 250 × 65 mm | Vier aufgestellte Wände mit innen verklebten Ecklaschen. Die Höhe ergibt sich aus 60 mm für den König plus 5 mm Kopfspiel. |
 | Stülpdeckel | 252 × 252 × 28 mm | Abnehmbar, seitlich 1 mm Spiel pro Seite ab Rillachse. Die Aussenseite bleibt vorerst unbedruckt. Zum Spielen Deckel abheben und wenden, damit die Innenseite mit dem Brett oben liegt. |
 | Einlage | 246 × 246 × 8 mm | Vier nach unten gefalzte Stützwände, mit Ecklaschen verklebt. Die Platte sitzt 8 mm über dem Boden und hat nominell 2 mm Abstand pro Seite ab Rillachse. |
-| Schachbrett | 240 × 240 mm | 8 × 8 Felder zu 30 mm in Kakaobraun und Creme. 6 mm Rand in mattem Ocker bis zur Deckelrille, mit a bis h oben und unten und 1 bis 8 auf beiden Seiten. Links unten ist a1 dunkel, rechts unten h1 hell. |
+| Schachbrett | 240 × 240 mm | 8 × 8 Felder zu 30 mm in Kakaobraun und Creme. 6 mm Rand in mattem Ocker bis zur Deckelrille, mit a bis h unten und 1 bis 8 links. Links unten ist a1 dunkel, rechts unten h1 hell. |
 
 Vier Reihen zu acht Plätzen nutzen den Platz an zwei gegenüberliegenden Seiten. Aussen liegen die Grundreihen, innen die Bauern. So lassen sich die Farben getrennt einpacken und die Figuren abzählen. Die Mitte bleibt frei, zum Beispiel für eine flache Anleitung mit der Schachaufstellung. Am engsten Punkt zwischen den Löchern für König und Dame bleiben 3 mm Kartonsteg.
 

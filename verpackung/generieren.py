@@ -231,8 +231,8 @@ def brettgrafik(brett, kante, anschnitt=0):
     w = kante + 2 * anschnitt
     rand = (kante - brett) / 2
     start = anschnitt + rand
-    nah = anschnitt + rand / 2
-    fern = anschnitt + kante - rand / 2
+    links = anschnitt + rand / 2
+    unten = anschnitt + kante - rand / 2
     schrift = min(3.4, rand * 0.65)
     basis = schrift * 0.35
     attrs = dict(fill=BRAUN, font_size=schrift, text_anchor="middle", font_weight="bold")
@@ -241,8 +241,8 @@ def brettgrafik(brett, kante, anschnitt=0):
                   for x, y, farbe in felder())
     for i, spalte in enumerate("abcdefgh"):
         mitte = start + (i + 0.5) * FELD
-        inhalt.extend(text(mitte, y + basis, spalte, **attrs) for y in (nah, fern))
-        inhalt.extend(text(x, mitte + basis, str(8 - i), **attrs) for x in (nah, fern))
+        inhalt.append(text(mitte, unten + basis, spalte, **attrs))
+        inhalt.append(text(links, mitte + basis, str(8 - i), **attrs))
     return inhalt
 
 
