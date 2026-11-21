@@ -65,8 +65,8 @@ Zweifarbig (Deckelfelder, Beschriftung) druckt das AMS des P2S.
 
 Nach dem Druck:
 1. Bohrungen Ø 5.4 für die Gewindestangen mit 5 mm durchbohren, Passstiftlöcher Ø 4.1 bei Bedarf mit 4 mm aufreiben.
-2. Passstifte in die ungeraden Platten (1, 3, 5) einpressen, sie stehen 8 mm vor.
-3. Trennflächen auf der Glasplatte planschleifen, Kavitäten nass schleifen bis 3000 (docs/02-plan-giessform.md, Abschnitt 3).
+2. Trennflächen auf der Glasplatte planschleifen, Kavitäten nass schleifen bis 3000 (docs/02-plan-giessform.md, Abschnitt 3).
+3. Erst danach die Passstifte in die ungeraden Platten (1, 3, 5) einpressen, sie stehen 8 mm vor.
 4. Waschen, trocknen.
 
 ## Filament

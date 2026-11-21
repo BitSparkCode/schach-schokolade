@@ -24,7 +24,7 @@ Schach-Silikonformen für Schokolade gibt es zu kaufen (Etsy), meist als flache 
 | Gedruckter Master plus Platin-Silikon | Glatte, glänzende Oberfläche, Hinterschnitte, ganze Figuren, reinigbar, Kühlschrank und Spülmaschine (je nach Silikon) | Silikon ist weich und verformt sich ohne Stütze. Lösung: gedruckte Stützschale. |
 | Zinn-vernetzendes (kondensationsvernetzendes) Silikon | Billiger | Nicht für Lebensmittel zugelassen. |
 
-Folgerung (Stand nach Entscheid von Moritz, ohne Silikon): Die Form wird direkt aus lebensmittelechtem Filament gedruckt. Die Probleme der Direktdruckformen werden einzeln gelöst: stehend gedruckt mit 0.08 mm und nass geschliffen gegen Rillen, Figuren ohne Hinterschnitte für die starre Form, Passstifte und Spannrahmen statt Klebeband, warme Handwäsche (Kakaobutter schmilzt bei etwa 34 °C). Silikon und Epoxid-Beschichtung bleiben Rückfallebenen. Details in docs/02-plan-giessform.md.
+Folgerung (Stand nach Entscheid von Moritz, ohne Silikon): Die Form wird direkt aus lebensmittelechtem Filament gedruckt. Die Probleme der Direktdruckformen werden einzeln gelöst: stehend gedruckt mit 0.08 mm und nass geschliffen gegen Rillen, Figuren ohne Hinterschnitte für die starre Form, Passstifte und Gewindestangen statt Klebeband, warme Handwäsche (Kakaobutter schmilzt bei etwa 34 °C). Silikon und Epoxid-Beschichtung bleiben Rückfallebenen. Details in docs/02-plan-giessform.md.
 
 ## Lebensmittelechtes Filament
 
