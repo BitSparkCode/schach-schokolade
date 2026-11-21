@@ -7,7 +7,7 @@ Alle Teile sind parametrisch in Python mit CadQuery gebaut. Masse ändern, neu e
 ```
 pip install -r cad/requirements.txt
 python3 cad/test_cad.py     # Prüfungen
-python3 cad/bauen.py        # STL in Drucklage nach stl/ (lokal, nicht im Repo), Masse nach stl/masse.json
+python3 cad/bauen.py        # STL in Drucklage nach stl/, Masse nach stl/masse.json
 python3 cad/druckplatte.py  # Druckaufträge als 3MF nach druck/
 python3 cad/ansicht.py      # Bilder nach bilder/, braucht Chrome mit CDP auf Port 29229
 ```

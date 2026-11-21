@@ -1,0 +1,293 @@
+{
+  "figuren": [
+    {
+      "datei": "stl/figuren/koenig.stl",
+      "mm": [
+        26.0,
+        26.0,
+        60.0
+      ],
+      "volumen_cm3": 11.37,
+      "wasserdicht": false,
+      "passt_p2s": true,
+      "figur": "koenig",
+      "hinterschnitt_mm2": 0.0,
+      "zu_flach_mm2": 0.0,
+      "luftfallen": 0
+    },
+    {
+      "datei": "stl/figuren/dame.stl",
+      "mm": [
+        25.0,
+        25.0,
+        55.0
+      ],
+      "volumen_cm3": 9.72,
+      "wasserdicht": true,
+      "passt_p2s": true,
+      "figur": "dame",
+      "hinterschnitt_mm2": 0.0,
+      "zu_flach_mm2": 0.0,
+      "luftfallen": 0
+    },
+    {
+      "datei": "stl/figuren/laeufer.stl",
+      "mm": [
+        23.0,
+        23.0,
+        48.0
+      ],
+      "volumen_cm3": 6.96,
+      "wasserdicht": true,
+      "passt_p2s": true,
+      "figur": "laeufer",
+      "hinterschnitt_mm2": 0.0,
+      "zu_flach_mm2": 0.0,
+      "luftfallen": 0
+    },
+    {
+      "datei": "stl/figuren/springer.stl",
+      "mm": [
+        23.0,
+        23.0,
+        44.0
+      ],
+      "volumen_cm3": 8.63,
+      "wasserdicht": false,
+      "passt_p2s": true,
+      "figur": "springer",
+      "hinterschnitt_mm2": 0.02,
+      "zu_flach_mm2": 0.55,
+      "luftfallen": 0
+    },
+    {
+      "datei": "stl/figuren/turm.stl",
+      "mm": [
+        23.0,
+        23.0,
+        40.0
+      ],
+      "volumen_cm3": 8.19,
+      "wasserdicht": true,
+      "passt_p2s": true,
+      "figur": "turm",
+      "hinterschnitt_mm2": 0.0,
+      "zu_flach_mm2": 0.0,
+      "luftfallen": 0
+    },
+    {
+      "datei": "stl/figuren/bauer.stl",
+      "mm": [
+        20.0,
+        20.0,
+        34.0
+      ],
+      "volumen_cm3": 4.43,
+      "wasserdicht": true,
+      "passt_p2s": true,
+      "figur": "bauer",
+      "hinterschnitt_mm2": 0.0,
+      "zu_flach_mm2": 0.0,
+      "luftfallen": 0
+    }
+  ],
+  "formen": [
+    {
+      "form": "probe",
+      "aussen_mm": [
+        91.0,
+        35.0,
+        48.0
+      ],
+      "plattendicken_mm": [
+        17.5,
+        17.5
+      ],
+      "trichter_versatz_y": 0.0,
+      "teile": [
+        {
+          "datei": "stl/form_probe/platte_1.stl",
+          "mm": [
+            91.0,
+            17.5,
+            48.0
+          ],
+          "volumen_cm3": 68.1,
+          "wasserdicht": false,
+          "passt_p2s": true
+        },
+        {
+          "datei": "stl/form_probe/platte_2.stl",
+          "mm": [
+            91.0,
+            17.5,
+            48.0
+          ],
+          "volumen_cm3": 68.1,
+          "wasserdicht": false,
+          "passt_p2s": true
+        },
+        {
+          "datei": "stl/form_probe/trichterplatte.stl",
+          "mm": [
+            96.6,
+            40.6,
+            15.0
+          ],
+          "volumen_cm3": 32.9,
+          "wasserdicht": true,
+          "passt_p2s": true
+        }
+      ]
+    },
+    {
+      "form": "vollsatz",
+      "aussen_mm": [
+        161.0,
+        113.0,
+        64.0
+      ],
+      "plattendicken_mm": [
+        19.0,
+        28.5,
+        25.5,
+        24.0,
+        16.0
+      ],
+      "trichter_versatz_y": 37.5,
+      "teile": [
+        {
+          "datei": "stl/form_vollsatz/platte_1.stl",
+          "mm": [
+            161.0,
+            19.0,
+            64.0
+          ],
+          "volumen_cm3": 176.3,
+          "wasserdicht": false,
+          "passt_p2s": true
+        },
+        {
+          "datei": "stl/form_vollsatz/platte_2.stl",
+          "mm": [
+            161.0,
+            28.5,
+            64.0
+          ],
+          "volumen_cm3": 256.3,
+          "wasserdicht": false,
+          "passt_p2s": true
+        },
+        {
+          "datei": "stl/form_vollsatz/platte_3.stl",
+          "mm": [
+            161.0,
+            25.5,
+            64.0
+          ],
+          "volumen_cm3": 234.3,
+          "wasserdicht": false,
+          "passt_p2s": true
+        },
+        {
+          "datei": "stl/form_vollsatz/platte_4.stl",
+          "mm": [
+            161.0,
+            24.0,
+            64.0
+          ],
+          "volumen_cm3": 226.9,
+          "wasserdicht": true,
+          "passt_p2s": true
+        },
+        {
+          "datei": "stl/form_vollsatz/platte_5.stl",
+          "mm": [
+            161.0,
+            16.0,
+            64.0
+          ],
+          "volumen_cm3": 154.3,
+          "wasserdicht": true,
+          "passt_p2s": true
+        },
+        {
+          "datei": "stl/form_vollsatz/trichterplatte.stl",
+          "mm": [
+            166.6,
+            118.6,
+            15.0
+          ],
+          "volumen_cm3": 126.3,
+          "wasserdicht": true,
+          "passt_p2s": true
+        }
+      ]
+    }
+  ],
+  "box": {
+    "deckel_aussen_mm": 240.0,
+    "unterteil_aussen_mm": 234.6,
+    "innen_mm": 229.8,
+    "innen_hoehe_mm": 63.0,
+    "unterteil_hoehe_mm": 65.0,
+    "box_hoehe_mm": 67.4,
+    "teile": [
+      {
+        "datei": "stl/box/unterteil.stl",
+        "mm": [
+          234.6,
+          234.6,
+          65.0
+        ],
+        "volumen_cm3": 270.7,
+        "wasserdicht": true,
+        "passt_p2s": true
+      },
+      {
+        "datei": "stl/box/unterteil_beschriftung.stl",
+        "mm": [
+          170.3,
+          29.1,
+          0.6
+        ],
+        "volumen_cm3": 0.4,
+        "wasserdicht": true,
+        "passt_p2s": true
+      },
+      {
+        "datei": "stl/box/einlage.stl",
+        "mm": [
+          228.8,
+          228.8,
+          8.0
+        ],
+        "volumen_cm3": 157.0,
+        "wasserdicht": true,
+        "passt_p2s": true
+      },
+      {
+        "datei": "stl/box/deckel.stl",
+        "mm": [
+          240.0,
+          240.0,
+          22.4
+        ],
+        "volumen_cm3": 164.9,
+        "wasserdicht": true,
+        "passt_p2s": true
+      },
+      {
+        "datei": "stl/box/deckel_felder_dunkel.stl",
+        "mm": [
+          239.9,
+          239.9,
+          0.6
+        ],
+        "volumen_cm3": 17.2,
+        "wasserdicht": true,
+        "passt_p2s": true
+      }
+    ]
+  }
+}

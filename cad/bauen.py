@@ -1,4 +1,4 @@
-"""Erzeugt alle STL-Dateien in Drucklage und stl/masse.json (lokal, nicht im Repo): python3 cad/bauen.py
+"""Erzeugt alle STL-Dateien in Drucklage und stl/masse.json: python3 cad/bauen.py
 
 Drucklage: Formplatten stehend in Giesslage (Giessebene oben). Trichterplatte,
 Einlage und Deckel liegen umgedreht, Sichtfläche auf dem Druckbett.
