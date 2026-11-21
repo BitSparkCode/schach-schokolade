@@ -20,7 +20,7 @@ Herstellerangaben der Kuvertüre haben Vorrang. Temperatur mit Testklecks auf Ba
 ## Giessen
 
 1. Offene Platten dünn mit Schokolade einpinseln (Kopf, Kragen, Springerohren).
-2. Form schliessen: Platten auf die Gewindestangen schieben, Passstifte greifen, Flügelmuttern über Kreuz handfest anziehen.
+2. Form schliessen: Platten auf die Gewindestangen schieben, Kegelnoppen greifen, Flügelmuttern über Kreuz handfest anziehen.
 3. Trichterplatte aufstecken.
 4. Mit Spritzbeutel oder Dosierflasche füllen, dünner Strahl an der Wand.
 5. 1 bis 2 Minuten rütteln.

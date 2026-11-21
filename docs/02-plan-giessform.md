@@ -55,12 +55,12 @@ Alle 16 Figuren einer Farbe werden in einem Guss gegossen (Wunsch Moritz). Die F
 |---|---|---|
 | Platten 1 bis 5 | PLA Pure White | Kavitäten, 161 × 64 mm, 16 bis 28.5 mm dick |
 | 4 Gewindestangen M5 × 160, Edelstahl, mit Unterlagscheiben und Flügelmuttern | Edelstahl | Führen und Spannen in einem. Ersetzt Spannrahmen und Magnete. |
-| Zylinderstifte Ø 4 × 16 mm, 2 pro Trennebene, 8 total | Edelstahl | Platten sitzen ohne Versatz, Naht ohne Stufe. Bohrungen Ø 4.1, bei Bedarf mit 4 mm aufreiben. |
+| Kegelnoppen Ø 8 × 3 mm, 45° Flanke, 2 pro Trennebene | PLA Pure White, mitgedruckt | Platten zentrieren sich beim Schliessen selbst, Naht ohne Stufe. Die ungeraden Platten (1, 3, 5) tragen die Noppen, die geraden (2, 4) die Aufnahmen. Links sitzt die Noppe 4 mm tiefer, rechts 4 mm höher, so passt jede Platte nur richtig herum. |
 | Trichterplatte | PLA Pure White | Ein Trichter pro Figur, Schürze sitzt auf dem Plattenstapel |
 
-Die Bohrungen für die Gewindestangen haben 0.4 mm Spiel, die genaue Lage geben die Passstifte. Geöffnet wird durch Abziehen der Platten entlang der Stangen, also senkrecht zur Trennebene.
+Die Bohrungen für die Gewindestangen haben 0.4 mm Spiel, die genaue Lage geben die Kegelnoppen. Die Aufnahmen sind 0.1 mm weiter und 0.5 mm tiefer, damit zuerst die Trennflächen aufliegen. Geöffnet wird durch Abziehen der Platten entlang der Stangen, also senkrecht zur Trennebene.
 
-**Dichte Naht**: Die Trennflächen werden stehend gedruckt und sind dadurch nicht ganz plan. Nach dem Druck jede Trennfläche auf einer Glasplatte mit Nassschliffpapier 400 und 800 plan schleifen (Läppen), bis sie vollflächig trägt. Dann zeichnet sich nur eine feine Linie ab, die nach dem Entformen mit dem Handschuh geglättet wird.
+**Dichte Naht**: Die Trennflächen werden stehend gedruckt und sind dadurch nicht ganz plan. Nach dem Druck jede Trennfläche mit Nassschliffpapier 400 und 800 plan schleifen (Läppen), bis sie vollflächig trägt. Die geraden Platten liegen dazu flach auf der Glasplatte. Bei den ungeraden Platten stehen die Noppen vor: Sie werden auf einem schmalen Glas- oder Fliesenstreifen geschliffen, 125 bis 130 mm breit (Probeform 55 bis 60 mm), die Noppen ragen seitlich vorbei. Geschliffen wird nur in Längsrichtung des Streifens. Dann zeichnet sich nur eine feine Linie ab, die nach dem Entformen mit dem Handschuh geglättet wird.
 
 **Probeform**: `druck/01_probeform.3mf` mit Bauer und Springer in 2 Platten (91 × 35 × 48 mm). Damit werden Oberfläche, Naht, Entformen und Kühlzeit geprüft, bevor die Buchform gedruckt wird.
 
@@ -119,10 +119,9 @@ Eine starre Form gibt nicht nach. Entformt wird darum nur, wenn die Schokolade s
 |---|---|---|
 | Bambu PLA Pure White (Platten, Trichterplatte, Probeform) | etwa 0.85 kg | Konformitätserklärung für die gewählte Farbe anfordern, fetthaltige Lebensmittel müssen abgedeckt sein. Natur oder Weiss. |
 | Gehärtete Stahldüse 0.4 mm | Serie beim P2S | Pflicht für die Teile mit Schokoladenkontakt |
-| Zylinderstifte Edelstahl Ø 4 × 16 mm | 10 | 2 pro Trennebene, 8 Buchform, 2 Probeform |
 | Gewindestangen M5 Edelstahl, Flügelmuttern, Unterlagscheiben | 4 × 160 mm, 4 × 60 mm, je 8 | Führen und Spannen |
-| Bohrer 5 mm, Reibahle 4 mm | je 1 | Bohrungen nacharbeiten |
-| Nassschliffpapier 400 bis 3000, Schleifstäbe, Glasplatte | je 1 | Kavitäten und Trennflächen |
+| Bohrer 5 mm | 1 | Bohrungen für die Gewindestangen nacharbeiten |
+| Nassschliffpapier 400 bis 3000, Schleifstäbe, Glasplatte, Glas- oder Fliesenstreifen 125 mm und 55 mm breit | je 1 | Kavitäten und Trennflächen |
 | Edelstahlspachtel, Spritzbeutel, Thermometer | je 1 | |
 | Vibrationsplatte oder Rüttler | optional | Entlüftung |
 | Kuvertüre dunkel und weiss | je 1 kg pro Testtag | Ein Set braucht etwa 130 g pro Farbe plus Überlauf |

@@ -31,6 +31,11 @@ def test_form(reihen):
         bb = p.val().BoundingBox()
         assert p.val().isValid(), n
         assert max(bb.xlen, bb.ylen, bb.zlen) <= BAURAUM, n
+    assert f.schleifbahn() > max(f.laengen) + 2
+    for (x, z), (sx, sz) in [(n, s) for n in f.noppen() for s in f.stangen()]:
+        assert abs(x - sx) > 0 or abs(z - sz) > (f.m.noppe_d + f.m.stange_d) / 2 + 1
+    for (n, a), (_, b) in zip(platten, platten[1:]):
+        assert a.intersect(b).val().Volume() < 1e-6, n
     for k, x, y, _ in f.kavitaeten():
         assert abs(y) in [abs(e) for e in f.ebenen], k
     bb = f.trichterplatte().val().BoundingBox()

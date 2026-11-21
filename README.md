@@ -27,7 +27,7 @@ CAD fertig, Druckaufträge in [druck/](druck/README.md). Als Nächstes: Probefor
 3. Gegen Rillen: Formplatten stehend mit 0.08 mm gedruckt, Kavitäten nass geschliffen bis Körnung 3000.
 4. Die Figuren haben keine Hinterschnitte, damit sich die starren Platten senkrecht abziehen lassen.
 5. Gegossen wird kopfüber durch den Standfuss, der Fuss ist der Einguss. Entlüftung über 45°-Schrägen.
-6. Passstifte und 4 Gewindestangen mit Flügelmuttern verhindern jedes Verrutschen.
+6. Gedruckte Kegelnoppen und 4 Gewindestangen mit Flügelmuttern verhindern jedes Verrutschen.
 7. Waschen von Hand mit warmem Wasser bis 45 °C, Kakaobutter schmilzt bei etwa 34 °C.
 
 ## Repository-Struktur

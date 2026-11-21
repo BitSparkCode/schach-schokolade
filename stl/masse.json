@@ -109,10 +109,10 @@
           "datei": "stl/form_probe/platte_1.stl",
           "mm": [
             91.0,
-            17.5,
+            20.5,
             48.0
           ],
-          "volumen_cm3": 68.1,
+          "volumen_cm3": 68.4,
           "wasserdicht": false,
           "passt_p2s": true
         },
@@ -123,7 +123,7 @@
             17.5,
             48.0
           ],
-          "volumen_cm3": 68.1,
+          "volumen_cm3": 68.2,
           "wasserdicht": false,
           "passt_p2s": true
         },
@@ -160,10 +160,10 @@
           "datei": "stl/form_vollsatz/platte_1.stl",
           "mm": [
             161.0,
-            19.0,
+            22.0,
             64.0
           ],
-          "volumen_cm3": 176.3,
+          "volumen_cm3": 176.7,
           "wasserdicht": false,
           "passt_p2s": true
         },
@@ -174,7 +174,7 @@
             28.5,
             64.0
           ],
-          "volumen_cm3": 256.3,
+          "volumen_cm3": 256.4,
           "wasserdicht": false,
           "passt_p2s": true
         },
@@ -182,10 +182,10 @@
           "datei": "stl/form_vollsatz/platte_3.stl",
           "mm": [
             161.0,
-            25.5,
+            31.5,
             64.0
           ],
-          "volumen_cm3": 234.3,
+          "volumen_cm3": 235.0,
           "wasserdicht": false,
           "passt_p2s": true
         },
@@ -196,7 +196,7 @@
             24.0,
             64.0
           ],
-          "volumen_cm3": 226.9,
+          "volumen_cm3": 227.1,
           "wasserdicht": true,
           "passt_p2s": true
         },
@@ -204,10 +204,10 @@
           "datei": "stl/form_vollsatz/platte_5.stl",
           "mm": [
             161.0,
-            16.0,
+            19.0,
             64.0
           ],
-          "volumen_cm3": 154.3,
+          "volumen_cm3": 154.7,
           "wasserdicht": true,
           "passt_p2s": true
         },

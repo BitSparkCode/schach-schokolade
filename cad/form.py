@@ -3,7 +3,8 @@
 Platten stehen senkrecht hintereinander (Stapelrichtung Y). Zwischen zwei
 Platten liegt eine Trennebene mit einer Reihe Kavitäten. Innenplatten tragen
 auf beiden Seiten Halbkavitäten. Vier Gewindestangen M5 führen und spannen
-den Stapel. Gegossen wird kopfüber, die Standflächen liegen in der Giessebene
+den Stapel. Gedruckte Kegelnoppen richten die Platten aus: Die ungeraden
+Platten (1, 3, 5) tragen die Noppen, die geraden die Aufnahmen. Gegossen wird kopfüber, die Standflächen liegen in der Giessebene
 oben. Gedruckt wird jede Platte stehend in Giesslage.
 """
 from dataclasses import dataclass, field
@@ -23,8 +24,11 @@ class Massen:
     stange_d: float = 5.4       # Bohrung für M5, nach dem Druck mit 5 mm aufbohren
     stange_rand: float = 9.0    # Mitte Stange bis Plattenrand
     stange_z: tuple = (12.0, 44.0)
-    stift_d: float = 4.1        # Edelstahl-Passstift 4 × 16 mm, je Trennebene zwei
-    stift_tiefe: float = 8.2
+    noppe_d: float = 8.0        # Kegelnoppe am Fuss, 45° Flanke, je Trennebene zwei
+    noppe_h: float = 3.0
+    noppe_versatz: float = 4.0  # links tiefer, rechts höher: Platte passt nur richtig herum
+    noppe_spiel: float = 0.1    # Aufnahme radial grösser
+    noppe_luft: float = 0.5     # Aufnahme tiefer, die Trennflächen schliessen zuerst
     trichter_hoehe: float = 10.0
     trichter_rand: float = 3.0  # Trichteröffnung oben = Fuss Ø + 2 × rand
     trichter_schuerze: float = 5.0
@@ -84,15 +88,27 @@ class Form:
         for x, z in self.stangen():
             bohrung = cq.Workplane("XZ").circle(m.stange_d / 2).extrude(self.tiefe + 20, both=True).translate((x, 0, z))
             hohl = hohl.union(bohrung)
-        for x, _ in self.stangen()[::2]:
-            for y in self.ebenen:
-                stift = cq.Workplane("XZ").circle(m.stift_d / 2).extrude(m.stift_tiefe, both=True).translate((x, y, self.hoehe / 2))
-                hohl = hohl.union(stift)
-        teile = []
-        for i, (y0, y1) in enumerate(zip(self.grenzen, self.grenzen[1:])):
-            block = cq.Workplane("XY").box(self.breite, y1 - y0, self.hoehe, centered=(True, False, False)).translate((0, y0, 0))
-            teile.append((f"platte_{i + 1}", block.cut(hohl)))
-        return teile
+        bloecke = []
+        for y0, y1 in zip(self.grenzen, self.grenzen[1:]):
+            bloecke.append(cq.Workplane("XY").box(self.breite, y1 - y0, self.hoehe, centered=(True, False, False)).translate((0, y0, 0)))
+        for j, y in enumerate(self.ebenen):
+            noppe, aufnahme, richtung = (j, j + 1, 1) if j % 2 == 0 else (j + 1, j, -1)
+            for x, z in self.noppen():
+                fuss, achse = cq.Vector(x, y, z), cq.Vector(0, richtung, 0)
+                r, rs, h = m.noppe_d / 2, m.noppe_d / 2 + m.noppe_spiel, m.noppe_h + m.noppe_luft
+                bloecke[noppe] = bloecke[noppe].union(cq.Workplane().add(cq.Solid.makeCone(r, r - m.noppe_h, m.noppe_h, fuss, achse)))
+                bloecke[aufnahme] = bloecke[aufnahme].cut(cq.Workplane().add(cq.Solid.makeCone(rs, rs - h, h, fuss, achse)))
+        return [(f"platte_{i + 1}", b.cut(hohl)) for i, b in enumerate(bloecke)]
+
+    def noppen(self):
+        """(x, z) der zwei Noppen je Trennebene, auf der Höhe der Gewindestangen."""
+        m = self.m
+        (xl, _), _, (xr, _), _ = self.stangen()
+        return [(xl, self.hoehe / 2 - m.noppe_versatz), (xr, self.hoehe / 2 + m.noppe_versatz)]
+
+    def schleifbahn(self):
+        """Breiteste Schleifbahn zwischen den Noppen der ungeraden Platten."""
+        return round(self.breite - 2 * (self.m.stange_rand + self.m.noppe_d / 2) - 2, 1)
 
     def trichterplatte(self):
         """Liegt auf der Giessebene, Schürze rundum fixiert sie auf dem Stapel."""
