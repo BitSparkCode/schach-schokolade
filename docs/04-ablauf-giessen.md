@@ -51,7 +51,7 @@ Trennmittel:
 | Backtrennspray | Nicht empfohlen. Lecithin und Emulgatoren geben Schlieren und Fremdgeschmack. |
 | Wasser | Nie. Schokolade stockt, wird matt und grau. |
 
-Kakaobutter statt Schritt 1 unter „Giessen“ einpinseln, nicht beides.
+Die Kakaobutter vor Schritt 1 unter „Giessen“ auftragen, danach wie gewohnt mit Schokolade einpinseln.
 
 ## Reihenfolge der Farben
 
