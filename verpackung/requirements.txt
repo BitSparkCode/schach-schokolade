@@ -1,0 +1,2 @@
+CairoSVG==2.8.2
+pypdf==6.13.3
