@@ -24,7 +24,7 @@ Schach-Silikonformen für Schokolade gibt es zu kaufen (Etsy), meist als flache 
 | Gedruckter Master plus Platin-Silikon | Glatte, glänzende Oberfläche, Hinterschnitte, ganze Figuren, reinigbar, Kühlschrank und Spülmaschine (je nach Silikon) | Silikon ist weich und verformt sich ohne Stütze. Lösung: gedruckte Stützschale. |
 | Zinn-vernetzendes (kondensationsvernetzendes) Silikon | Billiger | Nicht für Lebensmittel zugelassen. |
 
-Folgerung: Der Drucker baut Master, Formkasten, Stützschalen, Klammern und Trichter. Die Kontaktfläche zur Schokolade ist lebensmittelechtes Platin-Silikon.
+Folgerung (Stand nach Entscheid von Moritz, ohne Silikon): Die Form wird direkt aus lebensmittelechtem Filament gedruckt. Die Probleme der Direktdruckformen werden einzeln gelöst: stehend gedruckt mit 0.08 mm und nass geschliffen gegen Rillen, Figuren ohne Hinterschnitte für die starre Form, Passstifte und Spannrahmen statt Klebeband, warme Handwäsche (Kakaobutter schmilzt bei etwa 34 °C). Silikon und Epoxid-Beschichtung bleiben Rückfallebenen. Details in docs/02-plan-giessform.md.
 
 ## Lebensmittelechtes Filament
 
@@ -52,12 +52,12 @@ Folgerung: Der Drucker baut Master, Formkasten, Stützschalen, Klammern und Tric
 
 ### Wofür wir lebensmittelechtes Filament brauchen
 
-- **Nicht für die Giessform**: Die Kontaktfläche ist Silikon.
-- **Trichterplatte** (Einguss), weil sie flüssige Schokolade führt: PETG Translucent oder PLA Pure.
-- **Abstreifer** für den Standfuss: besser Edelstahl-Spachtel, sonst PETG Translucent.
-- **Stützschalen, Formkasten, Klammern, Master**: kein Lebensmittelkontakt, normales PLA oder PETG genügt. PETG ist im Kühlschrank formstabiler.
+- **Formhälften**: Kontaktfläche zur Schokolade. Bambu PLA Pure, Farbe mit Konformitätserklärung für fetthaltige Lebensmittel.
+- **Trichterplatte**: PLA Pure.
+- **Abstreifer** für den Standfuss: Edelstahl-Spachtel.
+- **Spannrahmen und Keile**: kein Lebensmittelkontakt, normales PETG genügt.
 
-## Lebensmittelechtes Silikon
+## Lebensmittelechtes Silikon (nur Rückfallebene)
 
 - Nur **platinvernetzendes** (additionsvernetzendes) Silikon mit Lebensmittelzulassung (EU 1935/2004, LFGB oder FDA 21 CFR 177.2600).
 - Beispiele: Smooth-On Smooth-Sil 940 (Shore 40A, vom Hersteller als lebensmittelecht für Schokolade ausgewiesen), Smooth-On Sorta-Clear 37 und 40, transluzente lebensmittelechte RTV-2 Silikone mit Shore 20A aus dem Fachhandel.

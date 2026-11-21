@@ -19,11 +19,12 @@ Planungsphase. Gebaut wird erst nach Freigabe des Plans.
 
 ## Kurzfassung des Plans
 
-1. Die Figuren werden als Modelle (Master) in CAD entworfen und auf dem Bambu Lab gedruckt, danach geschliffen und lackiert, bis keine Druckrillen mehr sichtbar sind.
-2. Um die Master wird lebensmittelechtes Platin-Silikon gegossen. Nur das Silikon berührt die Schokolade.
-3. Gedruckte Stützschalen halten die zweiteiligen Silikonformen, Passkegel und Klammern verhindern jedes Verrutschen.
-4. Gegossen wird kopfüber durch den Standfuss, der Fuss ist der Anguss. Entlüftungskanäle liegen in der Trennebene.
-5. Nach dem Auskühlen werden Stützschale und Silikon abgenommen, die Figur bleibt ganz.
+1. Die Giessform wird direkt auf dem Bambu Lab gedruckt, aus lebensmittelechtem PLA Pure mit Edelstahl- oder Stahldüse. Kein Silikon.
+2. Gegen Rillen: Formhälften stehend mit 0.08 mm gedruckt, Kavitäten nass geschliffen bis Körnung 3000.
+3. Die Figuren haben keine Hinterschnitte, damit sich die starren Hälften senkrecht abheben lassen.
+4. Gegossen wird kopfüber durch den Standfuss, der Fuss ist der Einguss. Entlüftung über 45°-Schrägen und Kanäle in der Trennebene.
+5. Passstifte, Magnete und ein Spannrahmen verhindern jedes Verrutschen.
+6. Waschen von Hand mit warmem Wasser bis 45 °C, Kakaobutter schmilzt bei etwa 34 °C.
 
 ## Repository-Struktur (geplant)
 
