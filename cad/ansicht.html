@@ -14,11 +14,16 @@ const l2 = new THREE.DirectionalLight(0xffffff, 0.6); l2.position.set(-300, 200,
 const lader = new STLLoader(), gruppe = new THREE.Group(); s.add(gruppe);
 const cache = {};
 for (const t of szene.teile) {
+  if (t.quader) {
+    const q = new THREE.Mesh(new THREE.BoxGeometry(...t.quader), new THREE.MeshStandardMaterial({color:t.farbe, roughness:0.9}));
+    q.position.set(...t.pos); gruppe.add(q); continue;
+  }
   if (!cache[t.stl]) cache[t.stl] = await lader.loadAsync(t.stl);
   const m = new THREE.Mesh(cache[t.stl], new THREE.MeshStandardMaterial({color:t.farbe, roughness:t.rau ?? 0.55, metalness:0.0, side:THREE.DoubleSide}));
   m.position.set(...(t.pos || [0,0,0])); m.rotation.set(...(t.rot || [0,0,0]).map(a => a*Math.PI/180)); gruppe.add(m);
 }
-const box = new THREE.Box3().setFromObject(gruppe), mitte = box.getCenter(new THREE.Vector3()), gr = box.getSize(new THREE.Vector3()).length();
+const box = new THREE.Box3().setFromObject(gruppe), gr = szene.d || box.getSize(new THREE.Vector3()).length();
+const mitte = szene.ziel ? new THREE.Vector3(...szene.ziel) : box.getCenter(new THREE.Vector3());
 const k = new THREE.PerspectiveCamera(szene.fov || 30, W/H, 1, 5000); k.up.set(0,0,1);
 const [az, el] = [szene.azim * Math.PI/180, szene.elev * Math.PI/180], d = gr * (szene.abstand || 1.6);
 k.position.set(mitte.x + d*Math.cos(el)*Math.cos(az), mitte.y + d*Math.cos(el)*Math.sin(az), mitte.z + d*Math.sin(el)); k.lookAt(mitte);

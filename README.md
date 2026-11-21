@@ -36,6 +36,6 @@ CAD fertig, Druckaufträge in [druck/](druck/README.md). Als Nächstes: Probefor
 cad/        parametrische Modelle (CadQuery, Python)
 druck/      Druckaufträge als 3MF, eine Datei pro Druckplatte
 stl/        Einzelteile als STL, in Drucklage
-bilder/     Ansichten aus dem CAD
+bilder/     Ansichten aus dem CAD, Übersicht in bilder/README.md
 docs/       Pläne, Recherche, Ablauf
 ```

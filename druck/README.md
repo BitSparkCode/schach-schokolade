@@ -11,6 +11,12 @@ Jede Datei ist eine Druckplatte. In Bambu Studio öffnen, Profil nach der Tabell
 | 5 | [05_box_einlage.3mf](05_box_einlage.3mf) | Erhöhte Einlage | White | 0.2 mm | |
 | 6 | [06_box_deckel.3mf](06_box_deckel.3mf) | Deckel mit Schachbrett | White, Felder Black | 0.2 mm | Teil Felder auf Black stellen |
 
+![Druckplatte 1](../bilder/druck_01_probeform.png)
+
+![Druckplatte 2](../bilder/druck_02_vollsatz_formplatten.png)
+
+Alle Druckplatten als Bild: [bilder/README.md](../bilder/README.md#druckplatten).
+
 Reihenfolge: Erst Nr 1 drucken, schleifen und giessen. Nr 2 und 3 erst, wenn die Probeform keine Rillen zeigt.
 
 Meldet Bambu Studio offene Kanten an Formplatten, die Reparatur bestätigen. Es sind Rundungen unter 0.1 mm.

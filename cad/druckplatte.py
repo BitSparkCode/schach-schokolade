@@ -70,12 +70,12 @@ def schreibe_3mf(ziel, namen, netze, mehrfarbig):
              '<Relationship Target="/3D/3dmodel.model" Id="rel0" '
              'Type="http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel"/></Relationships>')
     with zipfile.ZipFile(ziel, "w", zipfile.ZIP_DEFLATED) as z:
-        z.writestr("[Content_Types].xml", typen)
-        z.writestr("_rels/.rels", bezug)
-        z.writestr("3D/3dmodel.model", modell)
+        for name, inhalt in (("[Content_Types].xml", typen), ("_rels/.rels", bezug), ("3D/3dmodel.model", modell)):
+            z.writestr(zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0)), inhalt, zipfile.ZIP_DEFLATED)
 
 
-def auftrag(datei, teile, mehrfarbig):
+def anordnen(datei, teile, mehrfarbig):
+    """Lädt die Teile und legt sie auf die Druckplatte (0 bis 256 mm)."""
     if isinstance(teile, str):
         teile = _platten(teile)
     netze = [trimesh.load(STL / f"{t}.stl") for t in teile]
@@ -91,6 +91,11 @@ def auftrag(datei, teile, mehrfarbig):
     breite = max(m.extents[0] for m in netze)
     if max(tiefe, breite) > PLATTE:
         raise SystemExit(f"{datei}: passt nicht auf eine Druckplatte ({breite:.0f} × {tiefe:.0f} mm)")
+    return teile, netze
+
+
+def auftrag(datei, teile, mehrfarbig):
+    teile, netze = anordnen(datei, teile, mehrfarbig)
     ziel = DRUCK / datei
     schreibe_3mf(ziel, [pathlib.Path(t).stem for t in teile], netze, mehrfarbig)
     return ziel

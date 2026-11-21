@@ -53,7 +53,7 @@ Alle 16 Figuren einer Farbe werden in einem Guss gegossen (Wunsch Moritz). Die F
 
 | Teil | Material | Funktion |
 |---|---|---|
-| Platten 1 bis 5 | PLA Pure White | Kavitäten, 161 × 64 mm, 16 bis 28.5 mm dick |
+| Platten 1 bis 5 | PLA Pure White | Kavitäten, 161 × 64 mm, 16 bis 28.5 mm dick, dazu 3 mm Noppen |
 | 4 Gewindestangen M5 × 160, Edelstahl, mit Unterlagscheiben und Flügelmuttern | Edelstahl | Führen und Spannen in einem. Ersetzt Spannrahmen und Magnete. |
 | Kegelnoppen Ø 8 × 3 mm, 45° Flanke, 2 pro Trennebene | PLA Pure White, mitgedruckt | Platten zentrieren sich beim Schliessen selbst, Naht ohne Stufe. Die ungeraden Platten (1, 3, 5) tragen die Noppen, die geraden (2, 4) die Aufnahmen. Links sitzt die Noppe 4 mm tiefer, rechts 4 mm höher, so passt jede Platte nur richtig herum. |
 | Trichterplatte | PLA Pure White | Ein Trichter pro Figur, Schürze sitzt auf dem Plattenstapel |

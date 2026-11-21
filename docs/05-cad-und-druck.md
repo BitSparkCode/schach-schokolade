@@ -9,7 +9,7 @@ pip install -r cad/requirements.txt
 python3 cad/test_cad.py     # Prüfungen
 python3 cad/bauen.py        # STL in Drucklage nach stl/, Masse nach stl/masse.json
 python3 cad/druckplatte.py  # Druckaufträge als 3MF nach druck/
-python3 cad/ansicht.py      # Bilder nach bilder/, braucht Chrome mit CDP auf Port 29229
+python3 cad/ansicht.py      # alle Bilder nach bilder/, braucht Chrome mit CDP auf Port 29229 (einzelne: Namen anhängen)
 ```
 
 | Datei | Inhalt |
@@ -44,10 +44,18 @@ Die Restflächen beim Springer sind Facetten der Rundungen, kleiner als eine Dü
 
 | Form | Aussenmass B × T × H | Platten | Dicke der Platten |
 |---|---|---:|---|
-| Probeform (Bauer, Springer) | 91 × 35 × 48 mm | 2 | 17.5, 17.5 mm |
-| Buchform (16 Figuren) | 161 × 113 × 64 mm | 5 | 19, 28.5, 25.5, 24, 16 mm |
+| Probeform (Bauer, Springer) | 91 × 35 × 48 mm | 2 | 17.5, 17.5 mm, Platte 1 mit Noppen 20.5 mm |
+| Buchform (16 Figuren) | 161 × 113 × 64 mm | 5 | 19, 28.5, 25.5, 24, 16 mm, mit Noppen 22, 28.5, 31.5, 24, 19 mm |
 
 Die Trichterplatte ist 4 × 2.7 mm grösser und sitzt mit einer Schürze auf dem Stapel. Alle Teile passen einzeln in den Bauraum des P2S (256 × 256 × 256 mm). Die 5 Platten der Buchform passen zusammen auf eine Platte.
+
+Die Platten richten sich über gedruckte Kegelnoppen aus. Die ungeraden Platten tragen die Noppen, die geraden die Aufnahmen:
+
+![Platte 3 mit Noppen](../bilder/form_platte_noppen.png)
+
+![Schnitt durch eine Noppe](../bilder/form_noppen_schnitt.png)
+
+Alle Bilder mit Beschreibung: [bilder/README.md](../bilder/README.md).
 
 ## Druckeinstellungen P2S (Bambu Studio)
 
