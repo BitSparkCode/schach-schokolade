@@ -33,15 +33,25 @@ class VerpackungTest(unittest.TestCase):
             einlage = ElementTree.parse(ziel / "einlage.svg")
             self.assertEqual(Counter(float(loch.attrib["r"]) * 2 for loch in einlage.iter(f"{SVG}circle")),
                              {27.5: 2, 26.5: 2, 24.5: 12, 21.5: 16})
-            druck = PdfReader(ziel / "deckeldruck.pdf").pages[0]
+            druck = PdfReader(ziel / "brettdruck.pdf").pages[0]
             self.assert_mm(druck.trimbox.width, 252)
             self.assert_mm(druck.trimbox.height, 252)
             self.assert_mm(druck.bleedbox.width, 258)
             self.assert_mm(druck.trimbox.left, 3)
-            felder = list(ElementTree.parse(ziel / "deckeldruck.svg").iter(f"{SVG}rect"))[1:]
+            brett = ElementTree.parse(ziel / "brettdruck.svg")
+            rand, *felder = brett.iter(f"{SVG}rect")
+            self.assertNotIn(rand.attrib["fill"], (g.CREME, g.BRAUN))
             self.assertEqual(len(felder), 64)
             self.assertEqual(felder[0].attrib["fill"], g.CREME)
             self.assertEqual(felder[-8].attrib["fill"], g.BRAUN)
+            koordinaten = list(brett.iter(f"{SVG}text"))
+            self.assertEqual(Counter(label.text for label in koordinaten),
+                             dict.fromkeys("abcdefgh12345678", 2))
+            spalten = {label.text: float(label.attrib["x"]) for label in koordinaten if label.text.isalpha()}
+            reihen = {label.text: float(label.attrib["y"]) for label in koordinaten if label.text.isdigit()}
+            self.assertEqual([spalten[zeichen] for zeichen in "abcdefgh"], list(range(24, 235, 30)))
+            for n in range(8, 0, -1):
+                self.assertAlmostEqual(reihen[str(n)] - reihen["8"], 30 * (8 - n))
 
     def test_raster_und_figuren_aendern(self):
         with patch.object(g, "FELD", 32), patch.dict(g.FIGUREN, {"König": (64, 27)}):

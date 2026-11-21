@@ -34,6 +34,7 @@ KLEBUNG = "#3c795a"
 MASS = "#4d4d49"
 BRAUN = "#4b3027"
 CREME = "#e9dccc"
+BRETTRAND = "#b99a6a"
 WEISS = "#f7f0e5"
 
 GRUNDREIHE = ("Turm", "Springer", "Läufer", "Dame", "König", "Läufer", "Springer", "Turm")
@@ -63,8 +64,10 @@ def pruefe_masse():
     brett, boden, deckel, einlage, hoehe = masse()
     if min(FELD, DECKELSPIEL, EINLAGENSPIEL, KOPFSPIEL, ANSCHNITT, LOCHZUGABE) <= 0:
         raise ValueError("Feld, Spiele, Lochzugabe und Anschnitt müssen positiv sein.")
-    if not (deckel >= brett and 0 < DECKELTIEFE < hoehe and 0 < EINLAGENHOEHE < hoehe):
-        raise ValueError("Deckelrand, Deckeltiefe oder Einlagenhöhe prüfen.")
+    if (deckel - brett) / 2 < 3:
+        raise ValueError("Brettrand für die Koordinaten zu schmal.")
+    if not (0 < DECKELTIEFE < hoehe and 0 < EINLAGENHOEHE < hoehe):
+        raise ValueError("Deckeltiefe oder Einlagenhöhe prüfen.")
     if min(DECKELTIEFE, EINLAGENHOEHE, hoehe, KLEBELASCHE + 1) < 7:
         raise ValueError("Wände oder Klebelaschen für den Zuschnitt zu klein.")
     for figur, (h, fuss) in FIGUREN.items():
@@ -224,13 +227,23 @@ def felder():
             yield spalte * FELD, reihe * FELD, CREME if (reihe + spalte) % 2 == 0 else BRAUN
 
 
-def deckeldruck(brett, kante):
-    w = kante + 2 * ANSCHNITT
-    rand = (w - brett) / 2
-    inhalt = [element("rect", x=0, y=0, width=w, height=w, fill=BRAUN)]
-    inhalt.extend(element("rect", x=rand + x, y=rand + y, width=FELD, height=FELD, fill=farbe)
+def brettgrafik(brett, kante, anschnitt=0):
+    w = kante + 2 * anschnitt
+    rand = (kante - brett) / 2
+    start = anschnitt + rand
+    nah = anschnitt + rand / 2
+    fern = anschnitt + kante - rand / 2
+    schrift = min(3.4, rand * 0.65)
+    basis = schrift * 0.35
+    attrs = dict(fill=BRAUN, font_size=schrift, text_anchor="middle", font_weight="bold")
+    inhalt = [element("rect", x=0, y=0, width=w, height=w, fill=BRETTRAND)]
+    inhalt.extend(element("rect", x=start + x, y=start + y, width=FELD, height=FELD, fill=farbe)
                   for x, y, farbe in felder())
-    return svg(w, w, inhalt)
+    for i, spalte in enumerate("abcdefgh"):
+        mitte = start + (i + 0.5) * FELD
+        inhalt.extend(text(mitte, y + basis, spalte, **attrs) for y in (nah, fern))
+        inhalt.extend(text(x, mitte + basis, str(8 - i), **attrs) for x in (nah, fern))
+    return inhalt
 
 
 def vorschau(brett, boden, deckel, einlage, hoehe):
@@ -258,15 +271,12 @@ def vorschau(brett, boden, deckel, einlage, hoehe):
     titel(56, 70, "Schachschokolade", 38)
     info(58, 99, "Entwurf für 32 Figuren in zwei Farben")
     teile.append(linie(56, 122, 1064, 122, stroke="#b8a28f", stroke_width=1))
-    titel(58, 162, "01   Deckel")
+    titel(58, 162, "01   Deckel aussen")
     titel(586, 162, "02   Unterteil mit Einlage")
     p = projektion(246, 220, 0.96)
-    wand(p, (0, deckel), (deckel, deckel), 0, -DECKELTIEFE, "#806252")
-    wand(p, (deckel, 0), (deckel, deckel), 0, -DECKELTIEFE, "#674a3e")
-    ebene(p, 0, 0, deckel, 0, BRAUN)
-    rand = (deckel - brett) / 2
-    for x, y, farbe in felder():
-        ebene(p, rand + x, rand + y, FELD, 0, farbe)
+    wand(p, (0, deckel), (deckel, deckel), 0, -DECKELTIEFE, "#c5ab93")
+    wand(p, (deckel, 0), (deckel, deckel), 0, -DECKELTIEFE, "#b89c84")
+    ebene(p, 0, 0, deckel, 0, "#e0cbb7")
     p = projektion(780, 270, 0.96)
     ebene(p, 0, 0, boden, 0, "#b0957f")
     wand(p, (0, 0), (boden, 0), hoehe, 0, "#bc9e85")
@@ -281,22 +291,27 @@ def vorschau(brett, boden, deckel, einlage, hoehe):
                        stroke_width=1, stroke_dasharray="5 5"))
     teile.append(linie(*p(boden, 0, hoehe), *p(boden, boden, hoehe), stroke="#a08470",
                        stroke_width=1, stroke_dasharray="5 5"))
-    info(58, 450, f"Brett {mm(brett)} × {mm(brett)} mm")
+    info(58, 450, "Aussenseite bleibt unbedruckt")
     info(586, 450, "Vordere Wände zur Ansicht ausgeblendet")
     teile.append(linie(56, 480, 1064, 480, stroke="#b8a28f", stroke_width=1))
-    titel(58, 522, "03   Erhöhte Einlage")
+    titel(58, 522, "03   Schachbrett im Deckel")
+    teile.append(element("rect", x=58, y=552, width=217, height=217, fill="#b89c84"))
+    teile.append(f'<g transform="translate(64 558) scale({zahl(205 / deckel)})">')
+    teile.extend(brettgrafik(brett, deckel))
+    teile.append("</g>")
+    info(295, 637, "Deckel wenden und spielen")
+    info(295, 661, f"Spielfeld {mm(brett)} × {mm(brett)} mm")
+    titel(586, 522, "04   Erhöhte Einlage")
     k = 205 / einlage
-    teile.append(element("rect", x=59, y=553, width=205, height=205, fill=CREME,
+    teile.append(element("rect", x=588, y=553, width=205, height=205, fill=CREME,
                          stroke="#9e7d65", stroke_width=1))
     for farbe, _, x, y, d in loecher(einlage):
-        teile.append(element("circle", cx=59 + x * k, cy=553 + y * k, r=d * k / 2,
+        teile.append(element("circle", cx=588 + x * k, cy=553 + y * k, r=d * k / 2,
                              fill=BRAUN if farbe == "dunkel" else WEISS, stroke="#876551", stroke_width=1))
-    info(291, 578, "16 dunkle Figuren")
-    info(291, 663, "Freie Mitte für eine Einlegekarte")
-    info(291, 746, "16 weisse Figuren")
-    titel(652, 627, f"{mm(EINLAGENHOEHE)} mm über dem Boden")
-    info(652, 656, "Die Füsse stehen auf dem Boden.")
-    info(652, 681, "Die Öffnungen führen die Figuren seitlich.")
+    info(816, 578, "16 dunkle Figuren")
+    info(816, 652, f"{mm(EINLAGENHOEHE)} mm über dem Boden")
+    info(816, 676, "Mitte frei für eine Einlegekarte")
+    info(816, 746, "16 weisse Figuren")
     return svg(1120, 805, teile, raster=True)
 
 
@@ -323,8 +338,9 @@ def generieren(ziel):
         sammlung.add_page(pdf_blatt(inhalt))
     sammlung.write(ziel / "falzmuster.pdf")
 
-    druck = deckeldruck(brett, deckel)
-    schreibe_svg(ziel / "deckeldruck.svg", druck)
+    format_mit_anschnitt = deckel + 2 * ANSCHNITT
+    druck = svg(format_mit_anschnitt, format_mit_anschnitt, brettgrafik(brett, deckel, ANSCHNITT))
+    schreibe_svg(ziel / "brettdruck.svg", druck)
     blatt = pdf_blatt(druck)
     pts = 72 / 25.4
     anschnitt = ANSCHNITT * pts
@@ -333,7 +349,7 @@ def generieren(ziel):
     blatt.bleedbox = blatt.mediabox
     druck_pdf = PdfWriter()
     druck_pdf.add_page(blatt)
-    druck_pdf.write(ziel / "deckeldruck.pdf")
+    druck_pdf.write(ziel / "brettdruck.pdf")
     grafik = vorschau(brett, boden, deckel, einlage, hoehe)
     cairosvg.svg2png(bytestring=grafik.encode("utf-8"), write_to=str(ziel / "vorschau.png"),
                      output_width=1680, output_height=1208)
