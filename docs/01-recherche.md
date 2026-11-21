@@ -52,10 +52,10 @@ Folgerung (Stand nach Entscheid von Moritz, ohne Silikon): Die Form wird direkt 
 
 ### Wofür wir lebensmittelechtes Filament brauchen
 
-- **Formhälften**: Kontaktfläche zur Schokolade. Bambu PLA Pure, Farbe mit Konformitätserklärung für fetthaltige Lebensmittel.
+- **Formplatten**: Kontaktfläche zur Schokolade. Bambu PLA Pure, alle fünf Inhaltsstoffe inklusive Pigmente nach EU 10/2011 geprüft (Bambu Store, Stand November 2026).
 - **Trichterplatte**: PLA Pure.
 - **Abstreifer** für den Standfuss: Edelstahl-Spachtel.
-- **Spannrahmen und Keile**: kein Lebensmittelkontakt, normales PETG genügt.
+- **Gewindestangen, Flügelmuttern, Passstifte**: Edelstahl, ausserhalb der Kavität.
 
 ## Lebensmittelechtes Silikon (nur Rückfallebene)
 

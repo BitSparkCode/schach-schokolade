@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#f7f1e8;overflow:hidden}</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script></head>
+<body><script type="module">
+import * as THREE from 'three';
+import {STLLoader} from 'three/addons/loaders/STLLoader.js';
+const szene = JSON.parse(decodeURIComponent(location.hash.slice(1)));
+const W = szene.w || 1400, H = szene.h || 900;
+const r = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
+r.setSize(W, H); r.setClearColor(0xf7f1e8); r.shadowMap.enabled = true; document.body.appendChild(r.domElement);
+const s = new THREE.Scene();
+s.add(new THREE.HemisphereLight(0xffffff, 0x8a7a6a, 1.6));
+const l = new THREE.DirectionalLight(0xffffff, 1.8); l.position.set(150, -250, 400); s.add(l);
+const l2 = new THREE.DirectionalLight(0xffffff, 0.6); l2.position.set(-300, 200, 100); s.add(l2);
+const lader = new STLLoader(), gruppe = new THREE.Group(); s.add(gruppe);
+const cache = {};
+for (const t of szene.teile) {
+  if (!cache[t.stl]) cache[t.stl] = await lader.loadAsync(t.stl);
+  const m = new THREE.Mesh(cache[t.stl], new THREE.MeshStandardMaterial({color:t.farbe, roughness:t.rau ?? 0.55, metalness:0.0, side:THREE.DoubleSide}));
+  m.position.set(...(t.pos || [0,0,0])); m.rotation.set(...(t.rot || [0,0,0]).map(a => a*Math.PI/180)); gruppe.add(m);
+}
+const box = new THREE.Box3().setFromObject(gruppe), mitte = box.getCenter(new THREE.Vector3()), gr = box.getSize(new THREE.Vector3()).length();
+const k = new THREE.PerspectiveCamera(szene.fov || 30, W/H, 1, 5000); k.up.set(0,0,1);
+const [az, el] = [szene.azim * Math.PI/180, szene.elev * Math.PI/180], d = gr * (szene.abstand || 1.6);
+k.position.set(mitte.x + d*Math.cos(el)*Math.cos(az), mitte.y + d*Math.cos(el)*Math.sin(az), mitte.z + d*Math.sin(el)); k.lookAt(mitte);
+r.render(s, k); document.title = 'fertig';
+</script></body></html>

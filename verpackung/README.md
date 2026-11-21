@@ -1,5 +1,7 @@
 # Verpackung für die Schachschokolade
 
+Kartonentwurf mit Falzmuster. Die 3D-gedruckte Box ist in docs/06-box.md und cad/box.py beschrieben.
+
 Prototyp für 32 massive Figuren, je 16 aus dunkler und weisser Schokolade. Nutzlast rund 260 g. Die vorläufigen Figurenmasse stammen aus [dem Figurenplan in PR #1](https://github.com/BitSparkCode/schach-schokolade/blob/devin/1795270432-plan-giessform/docs/03-figuren.md). Vor der Kleinserie am ersten Guss und am gewählten Karton nachmessen.
 
 ![Vorschau von Deckel aussen, Schachbrett innen, Unterteil und erhöhter Einlage](vorlagen/vorschau.png)

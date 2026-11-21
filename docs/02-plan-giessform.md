@@ -15,63 +15,54 @@ Eine starre Form funktioniert, weil Rotationskörper (Bauer, Turm, Läufer, Dame
 ## 2. Waschen und Hygiene
 
 - Kakaobutter schmilzt bei etwa 34 °C. Warmes Wasser (40 bis 45 °C) mit Spülmittel löst die Schokolade auch aus feinen Rillen. Weiche Bürste, keine Scheuerschwämme (Kratzer bilden sich auf der Schokolade ab).
-- PLA Pure: Handwäsche bis etwa 45 °C. PETG Translucent: bis etwa 60 °C. Keine Spülmaschine, kein kochendes Wasser.
+- PLA Pure: Handwäsche bis etwa 45 °C, Bambu nennt 60 °C als Grenze. Keine Spülmaschine, kein kochendes Wasser.
 - Schokolade enthält kaum Wasser, Keime finden darin wenig Nährboden. Feuchtigkeit in Rillen ist das grössere Risiko: Formen offen und vollständig trocknen lassen, Restwasser lässt die Schokolade beim nächsten Guss stocken.
-- Formen sind Verbrauchsteile: bei Kratzern, Verfärbung oder Geruch neu drucken. Ein Block kostet wenig Filament.
+- Formen sind Verbrauchsteile: bei Kratzern, Verfärbung oder Geruch neu drucken. Eine Platte kostet wenig Filament.
 
 ## 3. Rillen vermeiden
 
 Die Schokolade bildet jede Schicht und jeden Kratzer der Kavität ab. Drei Massnahmen zusammen:
 
 1. **Druckausrichtung**: Formhälften stehend drucken, Figurenachse senkrecht, Kopf unten (Giesslage). Die Schichten laufen dann als feine waagrechte Ringe um die Figur, wie bei einem gedrechselten Stück. Liegend gedruckt würden die Rundungen als Treppenstufen abgebildet.
-2. **Druckeinstellungen**: 0.08 mm Schichthöhe, variable Schichthöhe in Bambu Studio für flache Partien (Kopf, Kragenoberseiten), langsame Aussenwand, Naht (Seam) auf die Rückseite der Hälfte statt in die Kavität, 100 % Infill rund um die Kavität.
+2. **Druckeinstellungen**: 0.08 mm Schichthöhe, variable Schichthöhe in Bambu Studio für flache Partien (Kopf, Kragenoberseiten), langsame Aussenwand, Naht (Seam) auf die Rückseite der Platte statt in die Kavität, 5 Wandlinien rund um die Kavität. Einstellungen für den P2S: docs/05-cad-und-druck.md.
 3. **Nachbearbeitung der Kavität**: Nassschliff 400, 800, 1500, 3000, mit runden Schleifstäben und Schleifschwamm. Nur Wasser und Schleifpapier, keine Polierpaste und kein Lack (nicht lebensmittelecht). Das Material bleibt dasselbe, die Konformität gilt weiter. Danach waschen.
 
 Gleiche Regel löst zwei Probleme: Wird in Giesslage gedruckt, sind die Kavitätendecken in Giesslage gleichzeitig Überhänge im Druck. Die 45°-Regel für die Entlüftung (Abschnitt 6) macht die Form ohne Stützmaterial druckbar. Stützmaterial in der Kavität ist verboten, es hinterlässt raue Stellen.
 
 Abnahmekriterium im Prototyp: Auf Armlänge sind keine Ringe sichtbar, unter Streiflicht dürfen feine Ringe erkennbar sein. Wenn nicht erreicht: Rückfallebene B.
 
-## 4. Aufbau eines Formblocks
+## 4. Aufbau: eine Buchform für alle 16 Figuren
+
+Alle 16 Figuren einer Farbe werden in einem Guss gegossen (Wunsch Moritz). Die Form besteht aus 5 senkrechten Platten, die wie Buchseiten hintereinander stehen. Zwischen zwei Platten liegt je eine Trennebene mit einer Reihe von 4 Kavitäten. Die 3 Innenplatten tragen auf beiden Seiten Halbkavitäten. CAD: `cad/form.py`, Masse und Druck: docs/05-cad-und-druck.md.
 
 ```
-            Trichterplatte (PLA Pure, aufgesteckt)
-   ┌───────────────────────────────────────────────┐
-   │  ▽        ▽        ▽        ▽     Einguss = Fuss│
-   ├───────────────────────────────────────────────┤  ← Giessebene, plan
-   │ ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐               │
-   │ │Fuss │ │Fuss │ │Fuss │ │Fuss │  Hälfte A + B  │
-   │ │  │  │ │  │  │ │  │  │ │  │  │  PLA Pure      │
-   │ │ Kopf│ │ Kopf│ │ Kopf│ │ Kopf│                │
-   │ └─────┘ └─────┘ └─────┘ └─────┘               │
-   └───────────────────────────────────────────────┘
-         Passkegel, Passstifte, Spannrahmen
+        Trichterplatte mit 16 Trichtern, Schürze rundum
+   ┌────────────────────────────────────────────────────┐
+   └────────────────────────────────────────────────────┘
+   │P1│ Reihe 1 │P2│ Reihe 2 │P3│ Reihe 3 │P4│ Reihe 4 │P5│
+   │  │ K D L L │  │ S S T T │  │ B B B B │  │ B B B B │  │
+   ◉──────────── 4 Gewindestangen M5 mit Flügelmuttern ────◉
 ```
 
-| Teil | Material | Funktion |
-|---|---|---|
-| Formhälfte A und B | PLA Pure (lebensmittelecht), Edelstahl- oder gehärtete Stahldüse | Kavität, konturnahe Wand 3 mm plus Rippen |
-| Passkegel | In die Hälften gedruckt, Kegel auf A, Bohrung auf B, 4 pro Block | Grobe Führung beim Schliessen |
-| Passstifte | 2 Zylinderstifte Edelstahl Ø 4 × 16 mm, in Hälfte A eingepresst | Hälften sitzen auf etwa 0.05 mm genau, Naht ohne Versatz |
-| Magnete | 6 Neodym Ø 10 × 3 mm, beim Druck eingelegt (Druckpause) und überdruckt | Schnelles Schliessen. Kein Kontakt zur Schokolade. |
-| Spannrahmen | PETG, U-Rahmen mit 2 Keilen oder 2 Rändelschrauben | Gleichmässiger Druck auf die ganze Trennebene, Form steht stabil |
-| Trichterplatte | PLA Pure | Ein Trichter pro Figur, auf die Passstifte gesteckt, fängt Überlauf |
-
-**Dichte Naht**: Die Trennflächen werden stehend gedruckt und sind dadurch nicht ganz plan. Nach dem Druck jede Trennfläche auf einer Glasplatte mit Nassschliffpapier 400 und 800 plan schleifen (Läppen), bis sie vollflächig trägt. Dann zeichnet sich nur eine feine Linie ab, die nach dem Entformen mit dem Handschuh geglättet wird.
-
-**Konturnahe Wand**: 3 mm Wand um die Kavität statt eines vollen Blocks. Dünnes PLA leitet die Kälte besser als Silikon, die Kühlzeit wird kürzer.
-
-### Blockaufteilung
-
-Druckbett Bambu Lab X1, P1 und A1: 256 × 256 mm. Ein Block mit 4 Kavitäten in einer Reihe ist etwa 170 mm lang. Stehend gedruckt sind die Hälften 70 mm hoch (König plus Fussverlängerung).
-
-| Block | Kavitäten |
+| Reihe | Kavitäten |
 |---|---|
 | 1 | König, Dame, Läufer, Läufer |
 | 2 | Springer, Springer, Turm, Turm |
 | 3 | 4 Bauern |
 | 4 | 4 Bauern |
 
-Ein Satz aus 4 Blöcken ergibt pro Guss eine Farbe (16 Figuren). Mit zwei Sätzen laufen dunkel und weiss gleichzeitig.
+| Teil | Material | Funktion |
+|---|---|---|
+| Platten 1 bis 5 | PLA Pure White | Kavitäten, 161 × 64 mm, 16 bis 28.5 mm dick |
+| 4 Gewindestangen M5 × 160, Edelstahl, mit Unterlagscheiben und Flügelmuttern | Edelstahl | Führen und Spannen in einem. Ersetzt Spannrahmen und Magnete. |
+| Zylinderstifte Ø 4 × 16 mm, 2 pro Trennebene, 8 total | Edelstahl | Platten sitzen ohne Versatz, Naht ohne Stufe. Bohrungen Ø 4.1, bei Bedarf mit 4 mm aufreiben. |
+| Trichterplatte | PLA Pure White | Ein Trichter pro Figur, Schürze sitzt auf dem Plattenstapel |
+
+Die Bohrungen für die Gewindestangen haben 0.4 mm Spiel, die genaue Lage geben die Passstifte. Geöffnet wird durch Abziehen der Platten entlang der Stangen, also senkrecht zur Trennebene.
+
+**Dichte Naht**: Die Trennflächen werden stehend gedruckt und sind dadurch nicht ganz plan. Nach dem Druck jede Trennfläche auf einer Glasplatte mit Nassschliffpapier 400 und 800 plan schleifen (Läppen), bis sie vollflächig trägt. Dann zeichnet sich nur eine feine Linie ab, die nach dem Entformen mit dem Handschuh geglättet wird.
+
+**Probeform**: `druck/01_probeform.3mf` mit Bauer und Springer in 2 Platten (91 × 35 × 48 mm). Damit werden Oberfläche, Naht, Entformen und Kühlzeit geprüft, bevor die Buchform gedruckt wird.
 
 ## 5. Anguss: der Fuss ist der Einguss
 
@@ -88,9 +79,9 @@ Verworfen: steigender Guss von unten wie beim Spritzguss. Der Angusskanal hinter
 Luft steigt in Giesslage nach oben zum Fuss. Eingeschlossen wird sie nur unter Flächen, die in Giesslage nach unten offen sind.
 
 1. **Gestaltungsregel** (docs/03-figuren.md): Unterseiten von Kragen, Köpfen und Kreuzarmen laufen aufrecht betrachtet mit mindestens 45° in den Schaft. Die Rotationsfiguren entlüften sich selbst, und die Form ist ohne Stützmaterial druckbar.
-2. **Entlüftungskanäle** wo die Regel nicht reicht (Springer: Ohren, Maul; König: Kreuzarme): 0.8 × 0.8 mm Kanal in der Trennfläche, vom höchsten Punkt der Luftfalle bis zur Giessebene. Direkt im CAD modelliert.
-3. Der dünne Schokoladenfaden im Kanal bricht beim Entformen ab und wird mit der Naht geglättet.
-4. **Beim Giessen**: offene Hälften zuerst dünn mit Schokolade einpinseln (Kopf, Details), dann schliessen und füllen, 1 bis 2 Minuten rütteln oder Vibrationsplatte.
+2. **Entlüftungskanäle** nur wo die Regel nicht reicht. Die CAD-Prüfung (`cad/pruefen.py`) findet bei allen 6 Figuren keine Luftfalle, auch nicht bei Springer und Königskreuz. Die Form hat darum vorerst keine Kanäle. Zeigt der Prototyp Lufteinschlüsse, kommt an der Stelle ein Kanal 0.8 × 0.8 mm in die Trennfläche bis zur Giessebene.
+3. Ein dünner Schokoladenfaden aus einem Kanal bricht beim Entformen ab und wird mit der Naht geglättet.
+4. **Beim Giessen**: offene Platten zuerst dünn mit Schokolade einpinseln (Kopf, Details), dann schliessen und füllen, 1 bis 2 Minuten rütteln oder Vibrationsplatte.
 
 ## 7. Kühlen
 
@@ -103,10 +94,10 @@ Luft steigt in Giesslage nach oben zum Fuss. Eingeschlossen wird sie nur unter F
 
 Eine starre Form gibt nicht nach. Entformt wird darum nur, wenn die Schokolade sich gelöst hat, und immer senkrecht zur Trennebene.
 
-1. Fertig ist die Figur, wenn sie beim leichten Klopfen auf die Form lose klingt oder sich an der Giessebene ein feiner Spalt zeigt. PETG Translucent statt PLA Pure für eine Hälfte macht das Lösen sichtbar (Option im Prototyp).
-2. Spannrahmen abnehmen. Hälfte A senkrecht abheben, die Passstifte führen. Nicht kippen und nicht hebeln: Kippen bricht Hals und Kreuz.
-3. Abhebehilfe: zwei Nasen an den Blockenden, an denen die Hälften mit den Daumen auseinandergedrückt werden. Kein Werkzeug in der Trennfuge, das zerkratzt die Trennfläche.
-4. Figur liegt in Hälfte B. Hälfte B umdrehen und über einem Tuch leicht klopfen, die Figur fällt heraus. Nicht am Kopf ziehen.
+1. Fertig ist die Figur, wenn sie beim leichten Klopfen auf die Form lose klingt oder sich an der Giessebene ein feiner Spalt zeigt. Ein feiner Spalt zwischen Figur und Kavität ist an der Giessebene von oben sichtbar.
+2. Flügelmuttern lösen. Platten einzeln entlang der Stangen abziehen, von aussen nach innen. Nicht kippen und nicht hebeln: Kippen bricht Hals und Kreuz.
+3. Die Platten mit den Daumen an den Stirnseiten auseinanderdrücken. Kein Werkzeug in der Trennfuge, das zerkratzt die Trennfläche.
+4. Die Figur liegt in einer Platte. Platte umdrehen und über einem Tuch leicht klopfen, die Figur fällt heraus. Nicht am Kopf ziehen.
 5. Klebt eine Figur: Form zurück in den Kühlschrank, 10 Minuten. Nie mit Gewalt.
 6. Mit Baumwollhandschuhen anfassen. Naht und Entlüftungsfäden mit Handschuh oder lauwarmem Spachtel glätten.
 7. Figuren in geschlossener Dose auf Raumtemperatur kommen lassen, dann verpacken.
@@ -117,22 +108,20 @@ Eine starre Form gibt nicht nach. Entformt wird darum nur, wenn die Schokolade s
 |---|---|---|---|
 | 0 | Plan freigeben, offene Fragen klären, Material bestellen | Bestellliste | Moritz |
 | 1 | Figuren und Formhälften parametrisch in CadQuery (Python), Renderings | `cad/`, STL, Bilder | Aussehen, Grösse |
-| 2 | Prototyp Einzelform Bauer: drucken, schleifen, giessen | Erste Bauern dunkel und weiss | Keine sichtbaren Rillen, Naht, Entformen, Kühlzeit. Sonst Rückfallebene B. |
-| 3 | Prototyp Einzelform Springer (schwierigste Figur) | Springer dunkel und weiss | Entlüftung, Ohren bleiben ganz, kein Verhaken |
-| 4 | Formblöcke 1 bis 4 | Ein vollständiger Formsatz | 16 Figuren pro Guss |
-| 5 | Ablauf Gusstag festlegen | docs/04-ablauf-giessen.md mit gemessenen Zeiten | Ein Set dunkel und weiss |
-| 6 | Verpackung (separate Session) | verpackung/ | Figuren passen in die Einlage |
+| 2 | Probeform Bauer und Springer: drucken, schleifen, giessen | Erste Bauern und Springer dunkel und weiss | Keine sichtbaren Rillen, Naht, Entformen, Kühlzeit. Sonst Rückfallebene B. |
+| 3 | Buchform mit 5 Platten | Eine Form für alle 16 Figuren | 16 Figuren pro Guss |
+| 4 | Ablauf Gusstag festlegen | docs/04-ablauf-giessen.md mit gemessenen Zeiten | Ein Set dunkel und weiss |
+| 5 | Box aus dem 3D-Drucker (docs/06-box.md) | `druck/04` bis `06` | Figuren passen in die Einlage, Deckel schliesst |
 
 ## 10. Material (Schätzung für einen Formsatz)
 
 | Material | Menge | Hinweis |
 |---|---|---|
-| Bambu PLA Pure (Formhälften, Trichterplatte) | 1 kg plus 0.5 kg für Prototypen | Konformitätserklärung für die gewählte Farbe anfordern, fetthaltige Lebensmittel müssen abgedeckt sein. Natur oder Weiss. |
-| Bambu PETG Translucent | 0.25 kg | Option für eine durchsichtige Hälfte im Prototyp |
-| PETG beliebig (Spannrahmen, Keile) | 0.5 kg | Kein Lebensmittelkontakt |
-| Edelstahl- oder gehärtete Stahldüse 0.4 mm | 1 | Pflicht für die Teile mit Schokoladenkontakt |
-| Zylinderstifte Edelstahl Ø 4 × 16 mm | 8 | 2 pro Block |
-| Neodym-Magnete Ø 10 × 3 mm | 24 | 6 pro Block, überdruckt |
+| Bambu PLA Pure White (Platten, Trichterplatte, Probeform) | etwa 0.85 kg | Konformitätserklärung für die gewählte Farbe anfordern, fetthaltige Lebensmittel müssen abgedeckt sein. Natur oder Weiss. |
+| Gehärtete Stahldüse 0.4 mm | Serie beim P2S | Pflicht für die Teile mit Schokoladenkontakt |
+| Zylinderstifte Edelstahl Ø 4 × 16 mm | 10 | 2 pro Trennebene, 8 Buchform, 2 Probeform |
+| Gewindestangen M5 Edelstahl, Flügelmuttern, Unterlagscheiben | 4 × 160 mm, 4 × 60 mm, je 8 | Führen und Spannen |
+| Bohrer 5 mm, Reibahle 4 mm | je 1 | Bohrungen nacharbeiten |
 | Nassschliffpapier 400 bis 3000, Schleifstäbe, Glasplatte | je 1 | Kavitäten und Trennflächen |
 | Edelstahlspachtel, Spritzbeutel, Thermometer | je 1 | |
 | Vibrationsplatte oder Rüttler | optional | Entlüftung |
@@ -140,7 +129,7 @@ Eine starre Form gibt nicht nach. Entformt wird darum nur, wenn die Schokolade s
 
 ## 11. Offene Fragen
 
-1. Welches Bambu Lab Modell und welche Düse? (Bettgrösse, Düse für Lebensmittelkontakt)
+1. Geklärt: Bambu Lab P2S, Bauraum 256 × 256 × 256 mm, Seriendüse gehärteter Stahl 0.4 mm.
 2. Sind die Figurengrössen in docs/03-figuren.md richtig?
 3. Wie viele Sets sollen hergestellt werden? Davon hängt ab, ob ein oder zwei Formsätze nötig sind.
-4. Welche Farbe PLA Pure ist mit Konformitätserklärung für Fett erhältlich?
+4. Geklärt: PLA Pure Black, Apricot und White. Bambu prüft alle fünf Inhaltsstoffe nach EU 10/2011, also jedes Pigment. Grenze laut Bambu 60 °C.

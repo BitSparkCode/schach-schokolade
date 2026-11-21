@@ -8,7 +8,7 @@
 - Ein Schachbrett aus Schokolade (dunkle und weisse Felder) als Zusatz zum Deckel.
 - Grössere Figuren hohl giessen (Schwenkguss, wie bei Osterhasen), falls massive Figuren zu schwer werden.
 - Glanz verbessern: Kavitäten bis Körnung 5000 schleifen, vor dem Guss mit Watte auspolieren.
-- Eine Formhälfte aus PETG Translucent: man sieht, wann die Schokolade sich löst.
+- Eine Formplatte aus PETG Translucent: man sieht, wann die Schokolade sich löst. Nur wenn PLA Pure das Lösen nicht erkennen lässt.
 - Rückfallebene B: Kavitäten mit lebensmittelechtem Epoxid beschichten, falls Ringe sichtbar bleiben.
 - Rückfallebene C: gedruckter Master plus Platin-Silikon in Stützschale (ursprünglicher Plan).
 
