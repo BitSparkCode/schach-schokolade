@@ -33,6 +33,26 @@ Herstellerangaben der Kuvertüre haben Vorrang. Temperatur mit Testklecks auf Ba
 3. In geschlossener Dose auf Raumtemperatur kommen lassen.
 4. Naht glätten, Figuren in die Verpackung setzen.
 
+## Klebt an der Form
+
+Ursachen in dieser Reihenfolge prüfen:
+
+1. **Nicht temperiert.** Nur temperierte Schokolade zieht sich beim Abkühlen zusammen und löst sich von selbst. Testklecks nach 5 Minuten weich oder matt: neu temperieren. Häufigste Ursache.
+2. **Zu kurz gekühlt.** 30 bis 45 Minuten bei 8 bis 12 °C, dann 5 bis 10 Minuten in den Tiefkühler. Die Schokolade schrumpft stärker als das PLA. Danach in geschlossener Dose auf Raumtemperatur kommen lassen, sonst bildet sich Kondenswasser.
+3. **Raue Kavität.** Klebt es nur an einzelnen Stellen, dort nochmals nass schleifen bis 3000 und polieren.
+4. **Weisse Schokolade** schrumpft weniger und klebt mehr. Hier immer Kakaobutter als Trennmittel nehmen.
+
+Trennmittel:
+
+| Mittel | Ergebnis |
+|---|---|
+| Kakaobutter, temperiert oder als Pulver (Mycryo) beziehungsweise Spray für Pralinenformen | Empfohlen. Hauchdünn einpinseln, Reste mit Küchenpapier auswischen. Geschmacksneutral, glänzt. |
+| Neutrales Öl (Raps, Sonnenblume) | Notlösung. Ganz dünn auftragen und wieder abreiben. Oberfläche wird etwas matt. |
+| Backtrennspray | Nicht empfohlen. Lecithin und Emulgatoren geben Schlieren und Fremdgeschmack. |
+| Wasser | Nie. Schokolade stockt, wird matt und grau. |
+
+Kakaobutter statt Schritt 1 unter „Giessen“ einpinseln, nicht beides.
+
 ## Reihenfolge der Farben
 
 Weiss und dunkel in getrennten Formsätzen. Bei nur einem Formsatz: erst weiss, Formen waschen und trocknen, dann dunkel.
